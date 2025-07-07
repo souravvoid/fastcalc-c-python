@@ -1,4 +1,8 @@
-# fastcalc-c-python
+Sure, Sourav! Here's your full README rewritten in proper **GitHub Markdown** ✅ so that it looks clean, readable, and well-formatted line-by-line when published:
+
+---
+
+````markdown
 # ⚡ FastCalc: A Fast Arithmetic Engine Using C + Python
 
 **FastCalc** is a beginner-friendly yet powerful project that connects **Python with C** using the `ctypes` module.  
@@ -24,77 +28,114 @@ It acts like a mini version of how **NumPy**, **PyTorch**, and other high-perfor
 > I wanted to **learn how this magic works** by building a basic version myself — where Python imports a `.so` or `.dll` and runs native C logic inside it.
 
 This project helped me understand:
-- How to write C functions for speed
-- How to load compiled code from Python using `ctypes`
-- How real-world libraries integrate C with Python
 
+- ✅ How to write C functions for speed  
+- ✅ How to load compiled code from Python using `ctypes`  
+- ✅ How real-world libraries integrate C with Python  
 
+---
 
 ## ⚙️ How to Run the Project (Linux / Windows)
 
-### 🐧 Linux (Ubuntu, Debian, Fedora etc.)
+### 🐧 Linux (Ubuntu, Debian, Fedora, etc.)
 
 #### Step 1: Install Requirements
 
-- On Ubuntu/Debian:
+On Ubuntu/Debian:
 
-`In terminal 
-
+```bash
 sudo apt update
 sudo apt install build-essential python3
-
-
+````
 
 On Fedora:
+
+```bash
 sudo dnf install gcc python3
-Step 2: Compile the C code to shared library
+```
 
+#### Step 2: Compile the C Code to Shared Library
+
+```bash
 gcc -shared -fPIC -o calc.so calc.c
-Step 3: Run the Python file
+```
+
+#### Step 3: Run the Python File
+
+```bash
 python3 main.py
+```
 
+---
 
-🪟 Windows (With MinGW)
-Step 1: Install Tools
-Install Python 3 from https://python.org
+### 🪟 Windows (Using MinGW)
 
-Install MinGW from https://www.mingw-w64.org/
+#### Step 1: Install Tools
 
-Step 2: Compile calc.c into DLL
-Open terminal:
+* [Install Python 3](https://python.org)
+* [Install MinGW](https://www.mingw-w64.org/)
+
+#### Step 2: Compile `calc.c` into DLL
+
+```bash
 gcc -shared -o calc.dll -Wl,--out-implib,libcalc.a calc.c
+```
 
-Step 3: Modify main.py for Windows
+#### Step 3: Modify `main.py` for Windows
+
+Change:
+
+```python
+from ctypes import CDLL
+lib = CDLL('./calc.so')
+```
+
+To:
+
+```python
 from ctypes import WinDLL
 lib = WinDLL('./calc.dll')
+```
 
-Step 4: Run Python script
+#### Step 4: Run the Python File
+
+```bash
 python main.py
+```
 
+---
 
-📁 Project Structure
+## 📁 Project Structure
+
+```
 fastcalc-c-python/
-├── calc.c          # C backend logic
-├── calc.so / calc.dll   # Compiled shared library (Linux / Windows)
-├── main.py         # Python frontend
+├── calc.c             # C backend logic
+├── calc.so / calc.dll # Compiled shared library (Linux / Windows)
+├── main.py            # Python frontend
 └── README.md
+```
 
+---
 
-🧠 Limitations (for now)
-🚫 No error handling (e.g., divide-by-zero)
+## 🧠 Limitations (for now)
 
-🚫 Only works on integers (int), not floats yet
+* 🚫 No error handling (e.g., divide-by-zero)
+* 🚫 Only works on integers (`int`), not floats yet
+* 🚫 CLI-only (no GUI yet)
 
-🚫 CLI-only (no GUI yet)
+---
 
+## 👨‍💻 Author
 
+Built with ❤️ by **Sourav**
 
+📫 [Connect with me on LinkedIn](https://www.linkedin.com/in/sourav-873471302/)
 
-👨‍💻 Author
-Built with ❤️ by Sourav 
+---
 
-📫 Connect with me on LinkedIn -https://www.linkedin.com/in/sourav-873471302/
+> ⭐ If this helped you understand how C and Python work together — feel free to star the repo and share!
 
-If this helped you understand how C and Python work together — feel free to ⭐ the repo and share!
+````
+
 
 
