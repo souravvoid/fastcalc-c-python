@@ -1,8 +1,5 @@
-Sure, Sourav! Here's your full README rewritten in proper **GitHub Markdown** ✅ so that it looks clean, readable, and well-formatted line-by-line when published:
 
----
-
-````markdown
+````
 # ⚡ FastCalc: A Fast Arithmetic Engine Using C + Python
 
 **FastCalc** is a beginner-friendly yet powerful project that connects **Python with C** using the `ctypes` module.  
@@ -97,7 +94,7 @@ from ctypes import WinDLL
 lib = WinDLL('./calc.dll')
 ```
 
-#### Step 4: Run the Python File
+# Step 4: Run the Python File
 
 ```bash
 python main.py
@@ -105,7 +102,7 @@ python main.py
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```
 fastcalc-c-python/
@@ -117,21 +114,21 @@ fastcalc-c-python/
 
 ---
 
-## 🧠 Limitations (for now)
+# 🧠 Limitations (for now)
 
 * 🚫 No error handling (e.g., divide-by-zero)
 * 🚫 Only works on integers (`int`), not floats yet
 * 🚫 CLI-only (no GUI yet)
 
----
 
-## 👨‍💻 Author
+
+# 👨‍💻 Author
 
 Built with ❤️ by **Sourav**
 
 📫 [Connect with me on LinkedIn](https://www.linkedin.com/in/sourav-873471302/)
 
----
+
 
 > ⭐ If this helped you understand how C and Python work together — feel free to star the repo and share!
 
