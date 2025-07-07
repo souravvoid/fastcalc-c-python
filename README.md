@@ -27,3 +27,74 @@ This project helped me understand:
 - How to write C functions for speed
 - How to load compiled code from Python using `ctypes`
 - How real-world libraries integrate C with Python
+
+
+
+## ⚙️ How to Run the Project (Linux / Windows)
+
+### 🐧 Linux (Ubuntu, Debian, Fedora etc.)
+
+#### Step 1: Install Requirements
+
+- On Ubuntu/Debian:
+
+`In terminal 
+
+sudo apt update
+sudo apt install build-essential python3
+
+
+
+On Fedora:
+sudo dnf install gcc python3
+Step 2: Compile the C code to shared library
+
+gcc -shared -fPIC -o calc.so calc.c
+Step 3: Run the Python file
+python3 main.py
+
+
+🪟 Windows (With MinGW)
+Step 1: Install Tools
+Install Python 3 from https://python.org
+
+Install MinGW from https://www.mingw-w64.org/
+
+Step 2: Compile calc.c into DLL
+Open terminal:
+gcc -shared -o calc.dll -Wl,--out-implib,libcalc.a calc.c
+
+Step 3: Modify main.py for Windows
+from ctypes import WinDLL
+lib = WinDLL('./calc.dll')
+
+Step 4: Run Python script
+python main.py
+
+
+📁 Project Structure
+fastcalc-c-python/
+├── calc.c          # C backend logic
+├── calc.so / calc.dll   # Compiled shared library (Linux / Windows)
+├── main.py         # Python frontend
+└── README.md
+
+
+🧠 Limitations (for now)
+🚫 No error handling (e.g., divide-by-zero)
+
+🚫 Only works on integers (int), not floats yet
+
+🚫 CLI-only (no GUI yet)
+
+
+
+
+👨‍💻 Author
+Built with ❤️ by Sourav 
+
+📫 Connect with me on LinkedIn -https://www.linkedin.com/in/sourav-873471302/
+
+If this helped you understand how C and Python work together — feel free to ⭐ the repo and share!
+
+
