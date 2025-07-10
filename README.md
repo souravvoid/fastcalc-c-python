@@ -1,34 +1,37 @@
 
-````
+---
+
+````markdown
 # ⚡ FastCalc: A Fast Arithmetic Engine Using C + Python
 
 **FastCalc** is a beginner-friendly yet powerful project that connects **Python with C** using the `ctypes` module.  
-It acts like a mini version of how **NumPy**, **PyTorch**, and other high-performance libraries speed up Python code using C behind the scenes.
+It acts like a mini version of how **NumPy**, **PyTorch**, and other high-performance libraries speed up Python code using C under the hood.
 
-> 🧠 I built this to **understand how C functions can be used inside Python** for speed, just like real libraries do.
+> 🧠 I built this to **understand how C functions can be used inside Python** for speed — just like real libraries do.
 
 ---
 
 ## 📦 What This Project Does
 
-- Handles **addition**, **subtraction**, **multiplication**, and **division**  
-- Takes two numbers and an operator as input  
-- Uses **C** for fast backend arithmetic  
-- Uses **Python** for simple input/output  
-- Works in **Linux** and **Windows (with WSL or MinGW)**
+- Handles **addition**, **subtraction**, **multiplication**, and **division**
+- Takes two numbers and an operator (`+`, `-`, `*`, `/`) as input
+- Uses **C** for fast backend arithmetic
+- Uses **Python** for user-friendly input/output
+- Supports **floating-point numbers** (like `3.3`, `5.5`)
+- Works in **Linux** and **Windows (via WSL or MinGW)**
 
 ---
 
 ## 🤔 Why I Built It — Motivation
 
-> Libraries like **NumPy** and **PyTorch** use C/C++ for performance-critical code.  
-> I wanted to **learn how this magic works** by building a basic version myself — where Python imports a `.so` or `.dll` and runs native C logic inside it.
+> Libraries like **NumPy**, **PyTorch**, and **TensorFlow** use C/C++ for their performance-critical code.  
+> I wanted to **learn how this performance bridge works** by building a basic version myself — where Python imports a `.so` (Linux) or `.dll` (Windows) and calls native C functions.
 
 This project helped me understand:
 
 - ✅ How to write C functions for speed  
-- ✅ How to load compiled code from Python using `ctypes`  
-- ✅ How real-world libraries integrate C with Python  
+- ✅ How to load compiled C code into Python using `ctypes`  
+- ✅ How real-world libraries connect low-level and high-level logic  
 
 ---
 
@@ -51,7 +54,7 @@ On Fedora:
 sudo dnf install gcc python3
 ```
 
-#### Step 2: Compile the C Code to Shared Library
+#### Step 2: Compile the C Code
 
 ```bash
 gcc -shared -fPIC -o calc.so calc.c
@@ -69,7 +72,7 @@ python3 main.py
 
 #### Step 1: Install Tools
 
-* [Install Python 3](https://python.org)
+* [Install Python 3](https://www.python.org)
 * [Install MinGW](https://www.mingw-w64.org/)
 
 #### Step 2: Compile `calc.c` into DLL
@@ -80,21 +83,21 @@ gcc -shared -o calc.dll -Wl,--out-implib,libcalc.a calc.c
 
 #### Step 3: Modify `main.py` for Windows
 
-Change:
+Replace:
 
 ```python
 from ctypes import CDLL
 lib = CDLL('./calc.so')
 ```
 
-To:
+With:
 
 ```python
 from ctypes import WinDLL
 lib = WinDLL('./calc.dll')
 ```
 
-# Step 4: Run the Python File
+#### Step 4: Run the Python File
 
 ```bash
 python main.py
@@ -102,37 +105,60 @@ python main.py
 
 ---
 
-# 📁 Project Structure
+## 🧠 Limitations (for now)
+
+* 🚫 No error handling for divide-by-zero (returns 0 silently)
+* 🚫 No support for complex expressions like `a + b * c` (just two numbers)
+* 🚫 CLI-only (no GUI or web app — yet!)
+
+---
+
+## 📁 Project Structure
 
 ```
 fastcalc-c-python/
 ├── calc.c             # C backend logic
 ├── calc.so / calc.dll # Compiled shared library (Linux / Windows)
-├── main.py            # Python frontend
-└── README.md
+├── main.py            # Python frontend logic
+└── README.md          # You're here
 ```
 
 ---
 
-# 🧠 Limitations (for now)
+## ✅ Sample Output
 
-* 🚫 No error handling (e.g., divide-by-zero)
-* 🚫 Only works on integers (`int`), not floats yet
-* 🚫 CLI-only (no GUI yet)
+```
+Enter the value of a: 3.3
+Enter the value of b: 4.7
+Enter operation (+, -, *, /): *
+Result: 15.51
+```
 
+---
 
-
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 Built with ❤️ by **Sourav**
 
 📫 [Connect with me on LinkedIn](https://www.linkedin.com/in/sourav-873471302/)
 
+---
 
-
-> ⭐ If this helped you understand how C and Python work together — feel free to star the repo and share!
+> ⭐ If this helped you understand how C and Python work together — feel free to star the repo and share it with friends!
 
 ````
 
+---
 
+✅ Now you can:
 
+1. **Save this content to `README.md`**
+2. Then use:
+
+```bash
+git add README.md
+git commit -m "Update README with full guide, usage, and motivation"
+git push
+````
+
+Let me know if you want help creating a GitHub release, making a banner, or adding a badge!

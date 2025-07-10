@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int calculate(int a,int b,char op)
+double calculate(double  a,double b,char  op)
 {
     switch(op)
     {
